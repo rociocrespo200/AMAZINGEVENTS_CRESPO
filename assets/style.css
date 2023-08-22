@@ -1,0 +1,126 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+/*VARIABLES*/
+:root{
+    --header-color: rgb(48, 128, 48);
+    --fuente-oscuro-color: rgb(34, 94, 34);
+    --fuente-claro-color: rgb(144, 236, 144);
+    --fondo-claro: rgb(181, 202, 181);
+}
+/*HEADER*/
+header{
+    background-color: var(--header-color);
+    padding: 10px 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+img#img_logo{
+    width: 40px;
+    height: 40px;
+}
+
+img#img_logo_miel{
+    width: auto;
+    height: 40px;
+}
+
+div#div_perfil{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+
+div#div_perfil a{
+    color: var(--fuente-claro-color) ;
+}
+
+/*MAIN LOGIN*/
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url(./../assets/FOTO-UNLAM.jpg);
+    background-size: cover;
+    background-position: bottom;
+}
+form{
+    margin: 170px 20px;
+    display: flex;
+    width: 300px;
+    flex-direction: column;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+form input, button, label{
+    margin-bottom: 10px;
+}
+
+form input{
+    border-radius: 5px;
+    padding: 5px;
+    border: 0.5px solid rgb(199, 197, 197);
+}
+button{
+    padding: 5px;
+    border-radius: 5px;
+    border: 0.5px solid var(--fuente-oscuro-color);
+    font-weight: 600;
+    color: var(--fuente-oscuro-color);
+}
+
+div#ayuda_ingreso a{
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.575);
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+    text-decoration: none;
+    width: 300px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 0 10px;
+}
+
+div#ayuda_ingreso a:hover, button:hover{
+    scale: 1.03;
+}
+
+h2{
+    color: var(--fuente-oscuro-color);
+    font-size: 20px;
+    padding: 10px;
+}
+
+/*FOOTER*/
+footer div{
+    padding: 20px;
+    text-align: center;
+}
+
+#footer1{
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    background-color:  rgb(41, 40, 40);
+    font-weight: 500;
+}
+#footer2{
+    background-color: var(--header-color);
+}
+
+#footer1 a, #footer1 p{
+    display:block;
+    text-decoration: none;
+    color: white;
+    padding: 8px;
+}
