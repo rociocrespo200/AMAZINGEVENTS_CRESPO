@@ -73,25 +73,33 @@
 
         <div id="div_filtros" class="d-flex align-items-center ">
             <div class="w-75" id="div_filtros_div">
-                <label for="upcoming" class="d-inline-block ">
-                    <input type="checkbox" name="upcoming" id="upcoming">
-                    <span>Upcoming</span>
+                <label for="food" class="d-inline-block ">
+                    <input type="checkbox" name="food" id="food">
+                    <span>Food Fair</span>
                 </label>
-                <label for="past_events" class="d-inline-block">
-                    <input type="checkbox" name="past_events" id="past_events">
-                    <span>Past</span>
+                <label for="museum" class="d-inline-block">
+                    <input type="checkbox" name="museum" id="museum">
+                    <span>Museum</span>
                 </label>
-                <label for="category1" class="d-inline-block ">
-                    <input type="checkbox" name="category1" id="category1">
-                    <span>Category1</span>
+                <label for="costume" class="d-inline-block ">
+                    <input type="checkbox" name="costume" id="costume">
+                    <span>Costume Party</span>
                 </label>
-                <label for="category2" class="d-inline-block">
-                    <input type="checkbox" name="category2" id="category2">
-                    <span>Category2</span>
+                <label for="music" class="d-inline-block">
+                    <input type="checkbox" name="music" id="music">
+                    <span>Music Concert</span>
                 </label>
-                <label for="category3" class="d-inline-block">
-                    <input type="checkbox" name="category3" id="category3">
-                    <span>Category3</span>
+                <label for="race" class="d-inline-block">
+                    <input type="checkbox" name="race" id="race">
+                    <span>Race</span>
+                </label>
+                <label for="book" class="d-inline-block">
+                    <input type="checkbox" name="book" id="book">
+                    <span>Book Exchange</span>
+                </label>
+                <label for="cinema" class="d-inline-block">
+                    <input type="checkbox" name="cinema" id="cinema">
+                    <span>Cinema</span>
                 </label>
             </div>
             <nav class="navbar navbar-light bg-light">
@@ -107,13 +115,12 @@
         <section id="section_cards" class="d-flex justify-content-center px-5">
             <div class="card" style="width: 18rem">
                 <img class="card-img-top w-100 h-50" src="./assets/books.jpg" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Books</h5>
+                <div class="card-body d-flex flex-column justify-content-between">
+                    <h5 class="card-title">School Book Fair</h5>
                     <p class="card-text">
-                        Some quick example text to build on the card title and make up the
-                        bulk of the card's content.
+                        Bring your unused school book and bring the one you need.
                     </p>
-                    <div class="card_div_price_buton d-flex" id="card_botones">
+                    <div class="card_botones card_div_price_buton d-flex" >
                         <h5 class="price">10.000$</h5>
                         <a href="./details.html" class="btn btn-outline-success">Ver mas detalles</a>
                     </div>
@@ -121,13 +128,12 @@
             </div>
             <div class="card" style="width: 18rem">
                 <img class="card-img-top w-100 h-50" src="./assets/costume_party.jpg" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Costume Party</h5>
+                <div class="card-body d-flex flex-column justify-content-between">
+                    <h5 class="card-title">Halloween Night</h5>
                     <p class="card-text">
-                        Some quick example text to build on the card title and make up the
-                        bulk of the card's content.
+                        Come in your scariest costume character to win amazing prizes.
                     </p>
-                    <div class="card_div_price_buton d-flex" id="card_botones">
+                    <div class="card_botones card_div_price_buton d-flex">
                         <h5 class="price">10.000$</h5>
                         <a href="./details.html" class="btn btn-outline-success">Ver mas detalles</a>
                     </div>
@@ -135,64 +141,73 @@
             </div>
             <div class="card" style="width: 18rem">
                 <img class="card-img-top w-100 h-50" src="./assets/cinema.jpg" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Cinema</h5>
+                <div class="card-body d-flex flex-column justify-content-between">
+                    <h5 class="card-title">Avengers</h5>
                     <p class="card-text">
-                        Some quick example text to build on the card title and make up the
-                        bulk of the card's content.
+                        "Marvel's Avengers 3d premiere the start of an epic saga with your best superheroes".
                     </p>
-                    <div class="card_div_price_buton d-flex" id="card_botones">
+                    <div class="card_botones card_div_price_buton d-flex" id="card_botones">
                         <h5 class="price">10.000$</h5>
-                        <a href="./details.html" class="btn btn-outline-success">Go somewhere</a>
+                        <a href="./details.html" class="btn btn-outline-success">Ver mas detalles</a>
                     </div>
                 </div>
             </div>
             <div class="card" style="width: 18rem">
                 <img class="card-img-top w-100 h-50" src="./assets/food_fair.jpg" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Foor fair</h5>
+                <div class="card-body d-flex flex-column justify-content-between">
+                    <h5 class="card-title">Festival of the collectivities</h5>
                     <p class="card-text">
-                        Some quick example text to build on the card title and make up the
-                        bulk of the card's content.
+                        Enjoy your favorite dishes from different countries in a unique event for the whole family.
                     </p>
-                    <div class="card_div_price_buton d-flex" id="card_botones">
+                    <div class="card_botones card_div_price_buton d-flex">
                         <h5 class="price">10.000$</h5>
-                        <a href="./details.html" class="btn btn-outline-success">Go somewhere</a>
+                        <a href="./details.html" class="btn btn-outline-success">Ver mas detalles</a>
                     </div>
                 </div>
             </div>
             <div class="card" style="width: 18rem">
                 <img class="card-img-top w-100 h-50" src="./assets/marathon.jpg" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Marathon</h5>
+                <div class="card-body d-flex flex-column justify-content-between">
+                    <h5 class="card-title">10K for life</h5>
                     <p class="card-text">
-                        Some quick example text to build on the card title and make up the
-                        bulk of the card's content.
+                        Come and exercise, improve your health and lifestyle.
                     </p>
-                    <div class="card_div_price_buton d-flex" id="card_botones">
+                    <div class="card_botones card_div_price_buton d-flex">
                         <h5 class="price">10.000$</h5>
-                        <a href="./details.html" class="btn btn-outline-success">Go somewhere</a>
+                        <a href="./details.html" class="btn btn-outline-success">Ver mas detalles</a>
                     </div>
                 </div>
             </div>
             <div class="card" style="width: 18rem">
                 <img class="card-img-top w-100 h-50" src="./assets/music_concert.jpg" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Music concert</h5>
+                <div class="card-body d-flex flex-column justify-content-between">
+                    <h5 class="card-title">Metallica in concert</h5>
                     <p class="card-text">
-                        Some quick example text to build on the card title and make up the
-                        bulk of the card's content.
+                        The only concert of the most emblematic band in the world.
                     </p>
-                    <div class="card_div_price_buton d-flex" id="card_botones">
+                    <div class="card_botones card_div_price_buton d-flex">
                         <h5 class="price">10.000$</h5>
-                        <a href="./details.html" class="btn btn-outline-success">Go somewhere</a>
+                        <a href="./details.html" class="btn btn-outline-success">Ver mas detalles</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem">
+                <img class="card-img-top w-100 h-50" src="./assets/outing_to_the_museum.jpg" alt="Card image cap">
+                <div class="card-body d-flex flex-column justify-content-between">
+                    <h5 class="card-title">Art Exhibition</h5>
+                    <p class="card-text">
+                        Let's go to the art museum for an incredible tour to learn about the largest dinosaurs
+                    </p>
+                    <div class="card_botones card_div_price_buton d-flex">
+                        <h5 class="price">10.000$</h5>
+                        <a href="./details.html" class="btn btn-outline-success">Ver mas detalles</a>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer id="footer" class="px-5">
+    <footer id="footer" class="footer px-5">
         <div class="w-50">
             <a href="#"><img src="./assets/facebook.png" alt=""></a>
             <a href="#"><img src="./assets/instagram.png" alt=""></a>
