@@ -1,7 +1,6 @@
 function cargarEventos(){
-    for(let evento of data.events){
+    for(let evento of eventos){
         crearEventos(evento);
     }
+    filtrarEventos(eventos);
 };
-
-cargarEventos();

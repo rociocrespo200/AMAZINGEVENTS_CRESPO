@@ -1,13 +1,18 @@
 function cargarEventos() {
-    for (let i = 0; i < data.events.length; i++) {
-        const evento = data.events[i];
-        if (data.currentDate > evento.date) {
+    const eventosPorFecha = [];
+    for (let i = 0; i < eventos.length; i++) {
+        const evento = eventos[i];
+        if (currentDate > evento.date) {
             crearEventos(evento);
+            eventosPorFecha.push(evento)
         }
     }
+    filtrarEventos(eventosPorFecha);
 };
 
-cargarEventos();
+
+
+
 
 
 

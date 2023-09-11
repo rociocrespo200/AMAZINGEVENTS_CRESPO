@@ -1,4 +1,53 @@
+//API
+let apiURL = 'https://mindhub-xj03.onrender.com/api/amazing';
 
+let eventos = [];
+let currentDate = '';
+
+async function getEventsData(){
+    const respuesta = await fetch(apiURL);
+    const data = await respuesta.json();
+	currentDate = data.currentDate;
+    eventos = data.events;
+
+	if(document.title == "Details") crearDetails();
+	else if (document.title == "Stats") generarTablas();
+	else generarFiltros();
+}
+
+getEventsData();
+
+//GENERAR FILTROS DINAMICAMENTE
+function generarFiltros() {
+	console.log(eventos);
+	const categorias = [];
+
+	//GUARDAR LAS CATEGORIAS DE LOS EVENTOS
+	for (let i = 0; i < eventos.length; i++) {
+		const evento = eventos[i];
+		const category = evento.category;
+		//SI LA CATEGORIA YA ESTA EN EL ARRAY NO VOLVER A GUARDARLA
+		if (categorias.indexOf(category) === -1) {
+			categorias.push(evento.category);
+		}
+	}
+
+	const divFiltros = document.querySelector("#div_filtros_div");
+	//RECORRO CATEGORY Y QENERO UN CHECKBOX POR CADA ELEMENTO
+	for (let i = 0; i < categorias.length; i++) {
+		const category = categorias[i];
+		const label = document.createElement("label");
+		label.innerHTML = `
+            <input type="checkbox" name="${category}" class="filter-checkbox">
+            <span>${category}</span>
+        `;
+		divFiltros.appendChild(label);
+	}
+	cargarEventos()
+}
+
+
+//CREAR EVENTOS
 const contenedorEventos = document.querySelector("#section_cards");
 let div_eventos = [];
 
@@ -23,70 +72,46 @@ function crearEventos(evento) {
 	div_eventos.push(divEvento);
 }
 
-//GENERAR FILTROS DINAMICAMENTE
-function generarFiltros() {
-	const categorias = [];
-
-	//GUARDAR LAS CATEGORIAS DE LOS EVENTOS
-	for (let i = 0; i < data.events.length; i++) {
-		const category = data.events[i].category;
-		//SI LA CATEGORIA YA ESTA EN EL ARRAY NO VOLVER A GUARDARLA
-		if (categorias.indexOf(category) === -1) {
-			categorias.push(data.events[i].category);
-		}
-	}
-
-	const divFiltros = document.querySelector("#div_filtros_div");
-	//RECORRO CATEGORY Y QENERO UN CHECKBOX POR CADA ELEMENTO
-	for (let i = 0; i < categorias.length; i++) {
-		const category = categorias[i];
-		const label = document.createElement("label");
-		label.innerHTML = `
-            <input type="checkbox" name="${category}" class="filter-checkbox">
-            <span>${category}</span>
-        `;
-		divFiltros.appendChild(label);
-	}
-}
-generarFiltros();
 
 const filtrosActivos = [];
 let eventosFiltradoSearch = [];
 let eventosFiltrados = [];
 
-document.querySelector("#form_busqueda").addEventListener('submit', (e) => {
-	e.preventDefault();
-	const inputSearch = document.querySelector("#input_search").value.toLowerCase(); // Obtener el valor del input y convertir a minúsculas
-
-	let eventosFiltradoSearch = data.events.filter((evento) => evento.name.toLowerCase().includes(inputSearch) && (filtrosActivos.includes(evento.category) || filtrosActivos.length == 0))
-	aplicarFiltros(eventosFiltradoSearch);
-});
-
-document.addEventListener('change', e => {
-	console.log("------------- FILTROS -------------");
-	if (e.target.classList.contains('filter-checkbox')) {  // --> los elementos con evento change y clase "filter-checkbox"
-		console.log(e.target.name);
-		console.log(filtrosActivos);
-		if (filtrosActivos.includes(e.target.name) == false) {   // --> si el checkbox NO estaba activo
-			let eventosFiltrados = (eventosFiltradoSearch.length != 0) ? eventosFiltradoSearch.filter((evento) => e.target.name == evento.category):
-				data.events.filter((evento) => e.target.name == evento.category || filtrosActivos.includes(evento.category));
-			aplicarFiltros(eventosFiltrados);
-
-			filtrosActivos.push(e.target.name);
-
-		} else {  // --> si el checkbox SI estaba activo
-			filtrosActivos.splice(filtrosActivos.indexOf(e.target.name), 1);
-
-			let eventosFiltrados = data.events.filter((evento) => filtrosActivos.includes(evento.category));
-
-			if (filtrosActivos.length == 0) aplicarFiltros(data.events);
-			else aplicarFiltros(eventosFiltrados);
-
-		};
-
-	}
-
-});
+function filtrarEventos(eventos){
+	document.querySelector("#form_busqueda").addEventListener('submit', (e) => {
+		e.preventDefault();
+		const inputSearch = document.querySelector("#input_search").value.toLowerCase(); // Obtener el valor del input y convertir a minúsculas
+	
+		let eventosFiltradoSearch = eventos.filter((evento) => evento.name.toLowerCase().includes(inputSearch) && (filtrosActivos.includes(evento.category) || filtrosActivos.length == 0))
+		aplicarFiltros(eventosFiltradoSearch);
+	});
+	
+	document.addEventListener('change', e => {
+		console.log("------------- FILTROS -------------");
+		if (e.target.classList.contains('filter-checkbox')) {  // --> los elementos con evento change y clase "filter-checkbox"
+			console.log(e.target.name);
+			console.log(filtrosActivos);
+			if (filtrosActivos.includes(e.target.name) == false) {   // --> si el checkbox NO estaba activo
+				let eventosFiltrados = (eventosFiltradoSearch.length != 0) ? eventosFiltradoSearch.filter((evento) => e.target.name == evento.category):
+					eventos.filter((evento) => e.target.name == evento.category || filtrosActivos.includes(evento.category));
+				aplicarFiltros(eventosFiltrados);
+	
+				filtrosActivos.push(e.target.name);
+	
+			} else {  // --> si el checkbox SI estaba activo
+				filtrosActivos.splice(filtrosActivos.indexOf(e.target.name), 1);
+	
+				let eventosFiltrados = eventos.filter((evento) => filtrosActivos.includes(evento.category));
+	
+				if (filtrosActivos.length == 0) aplicarFiltros(eventos);
+				else aplicarFiltros(eventosFiltrados);
+	
+			};
+	
+		}
+	
+	});
+}
 
 const footer = document.getElementById('footer');
 
