@@ -11,7 +11,7 @@ Amazing events es una pagina web de eventos que permite a los usuarios visualiza
 * [Screenshots](#screenshots)
 * [Lenguajes](#-Lenguajes)
 * [Como ejecutar](#como-ejecutar)
-* [Colaboradores](#colaboradores)
+* [Autores](#autores)
 
 ## Funcionalidades principales
 - Filtrar eventos por categoria (cinema-party-books-etc..)
