@@ -17,7 +17,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
-    <title>Document</title>
+    <title>Stats</title>
 </head>
 
 <body>
@@ -72,7 +72,7 @@
         </div>
 
         <table>
-            <tbody>
+            <tbody id="tabla1">
                 <tr class="thead">
                     <th colspan="3">Events Stadistic</th>
                 </tr>
@@ -81,14 +81,9 @@
                     <td>Events with lowest % of assistence</td>
                     <td>Events with larger capacity</td>
                 </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td>.</td>
-                </tr>
             </tbody>
 
-            <tbody>
+            <tbody  id="tabla2">
                 <tr class="thead">
                     <th colspan="3">Upcoming events stadistic by category</th>
                 </tr>
@@ -97,19 +92,10 @@
                     <td>Revanues</td>
                     <td>Porcentage of assistence</td>
                 </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td>.</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td>.</td>
-                </tr>
+
             </tbody>
 
-            <tbody>
+            <tbody id="tabla3">
                 <tr class="thead">
                     <th colspan="3">Past events statistics by category</th>
                 </tr>
@@ -118,16 +104,7 @@
                     <td>Revanues</td>
                     <td>Porcentage of assistence</td>
                 </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td>.</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td>.</td>
-                </tr>
+
             </tbody>
         </table>
         
@@ -135,7 +112,7 @@
 
     </main>
 
-    <footer id="footer_absolute" class="footer px-5">
+    <footer  class="footer px-5">
         <div class="w-50">
             <a href="#"><img src="./assets/facebook.png" alt=""></a>
             <a href="#"><img src="./assets/instagram.png" alt=""></a>
@@ -143,6 +120,9 @@
         </div>
         <span>Rocio Crespo - AP Desarrollo web 01 TM</span>
     </footer>
+
+    <script src="./js/main.js"></script>
+    <script src="./js/stats.js"></script>
 </body>
 
 </html>
