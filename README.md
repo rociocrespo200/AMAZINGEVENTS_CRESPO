@@ -1,7 +1,9 @@
 # Amazing events
 
 Amazing events es una pagina web de eventos que permite a los usuarios visualizar los eventos que ofrece la empresa tanto los pasados como los futuros.
-
+```
+Estado: FINALIZADO
+```
 
 ![Logo](/assets/Presentacion/home.png)
 
