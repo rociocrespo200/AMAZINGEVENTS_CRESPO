@@ -3,7 +3,7 @@
 Amazing events es una pagina web de eventos que permite a los usuarios visualizar los eventos que ofrece la empresa tanto los pasados como los futuros.
 
 
-![Logo](/assets/presentacion/home.png)
+![Logo](/assets/Presentacion/home.png)
 
 ## Indice
 * [Funcionalidades principales](#funcionalidades-principales)
@@ -24,8 +24,8 @@ Amazing events es una pagina web de eventos que permite a los usuarios visualiza
 El proyecto se realizó con el objetivo de implementar APIS, filtros y funcionalidades integramente con JavaScript.
 
 ## Screenshots
-![Logo](/assets/presentacion/espec.png)
-![Logo](/assets/presentacion/stats.png)
+![Logo](/assets/Presentacion/espec.png)
+![Logo](/assets/Presentacion/stats.png)
 
 ## 🛠 Lenguajes
 HTML, CSS, JavaScript, Bootstrap.
